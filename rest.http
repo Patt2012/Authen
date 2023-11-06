@@ -1,0 +1,44 @@
+POST http://localhost:8000/api/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "user5@com",
+    "password": "user5"
+}
+
+###
+GET http://localhost:8000/api/v1/users HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI1NmRlYjc0OC01Yzg1LTQ3OTktYTI2OS1jOWM0NzNjMmQzZDgiLCJzdWIiOiJ1c2VyNUBjb20iLCJleHAiOjE2OTg4NjEzNzB9.8DB6e8nwCdft8wrWKGEdP8TKuX-er2rvWQzlwEjPc3w
+
+###
+POST http://localhost:8000/api/v1/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "user5@com",
+  "password": "user5",
+  "full_name": "user5 dotcom",
+  "password_confirm": "user5"
+}
+
+###
+GET http://localhost:8000/api/v1/users/user3@com HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI1NmRlYjc0OC01Yzg1LTQ3OTktYTI2OS1jOWM0NzNjMmQzZDgiLCJzdWIiOiJ1c2VyNUBjb20iLCJleHAiOjE2OTg4NjEzNzB9.8DB6e8nwCdft8wrWKGEdP8TKuX-er2rvWQzlwEjPc3w
+
+###
+GET http://localhost:8000/api/v1/me/298dc3f3-ccdd-4f84-9af1-1e2a20edf9f1 HTTP/1.1
+Content-Type: application/json
+
+
+###
+PATCH http://localhost:8000/api/v1/users/c1ec7914-d5d8-41d3-8eb3-9e49888cd242 HTTP/1.1
+Content-Type: application/json
+
+{
+  "full_name": "user4 dotcom"
+}
+
+###
+DELETE http://localhost:8000/api/v1/users/c1ec7914-d5d8-41d3-8eb3-9e49888cd242 HTTP/1.1
